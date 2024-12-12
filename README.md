@@ -1,46 +1,140 @@
-# Getting Started with Create React App
+# Cubin.gg
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A speedcube timer web application built with React and Node.js. Features include:
+- Multiple puzzle support (2x2, 3x3, 4x4)
+- Real-time scramble generation with visual representation
+- Session statistics (Best time, Ao5, Mean)
+- Time history with detailed solve information
+- Keyboard controls for precise timing
 
-## Available Scripts
+## Tech Stack
 
-In the project directory, you can run:
+### Frontend
+- React 18
+- TypeScript
+- Tailwind CSS
+- Axios for API calls
 
-### `yarn start`
+### Backend
+- Node.js
+- Express
+- TypeScript
+- Java bridge for TNoodle scramble generation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Prerequisites
+- Node.js (v16 or higher)
+- Java Runtime Environment (JRE)
+- Yarn package manager
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Project Structure
+```
+cubin.gg/
+├── client/              # React frontend
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+├── server/              # Express backend
+│   ├── src/
+│   ├── scrambles-0.19.2-all.jar
+│   └── package.json
+│
+└── package.json         # Root package.json
+```
 
-### `yarn test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/cubin.gg.git
+cd cubin.gg
+```
 
-### `yarn build`
+2. Install dependencies
+```bash
+# Install root dependencies
+yarn install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Install client dependencies
+cd client
+yarn install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Install server dependencies
+cd ../server
+yarn install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Set up environment variables
+```bash
+# In client/.env
+VITE_API_URL=http://localhost:5000
 
-### `yarn eject`
+# In server/.env (if needed)
+PORT=5000
+HOST=0.0.0.0
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Running the Application
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+From the root directory:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+# Run both frontend and backend
+yarn dev
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Run only frontend
+yarn client
 
-## Learn More
+# Run only backend
+yarn server
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Frontend will be available at: http://localhost:3000
+- Backend will be available at: http://localhost:5000
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Features
+
+### Timer
+- Space bar control for starting/stopping
+- Millisecond precision
+- Visual feedback for timer state
+
+### Statistics
+- Best solve time
+- Current Average of 5
+- Best Average of 5
+- Session mean
+
+### Time Management
+- View detailed solve information
+- Remove individual times
+- Clear entire session
+- Automatic session saving
+
+## Development
+
+### Frontend Structure
+- Components follow a modular architecture
+- Hooks for timer and time entry management
+- Tailwind for styling
+- TypeScript for type safety
+
+### Backend Structure
+- Express server with TypeScript
+- Service-based architecture for scramble generation
+- Java bridge for TNoodle integration
+- RESTful API endpoints
+
+## Contributing
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+- TNoodle for scramble generation
+- World Cube Association for scramble specifications

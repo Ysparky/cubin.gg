@@ -4,7 +4,7 @@ import { useTimeEntries } from "./hooks/useTimeEntries";
 import { useKeyboardControls } from "./hooks/useKeyboardControls";
 import { calculateStatistics } from "./utils/statistics";
 import { PuzzleType } from "./types";
-import { generateScramble } from "./utils/scramble";
+import { generateScramble } from "./utils/api";
 import { MainLayout } from "./components/layout/MainLayout";
 import { TimerSection } from "./components/timer/TimerSection";
 import { StatisticsSection } from "./components/statistics/StatisticsSection";
