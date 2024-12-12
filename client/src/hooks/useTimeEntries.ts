@@ -25,8 +25,10 @@ export const useTimeEntries = () => {
     setTimeEntries((prev) => [...prev, timeEntry]);
   };
 
-  const removeTime = (id: string) => {
-    setTimeEntries((prev) => prev.filter((entry) => entry.id !== id));
+  const removeTime = (id?: string) => {
+    setTimeEntries((prev) =>
+      id ? prev.filter((entry) => entry.id !== id) : prev.slice(0, -1)
+    );
   };
 
   const clearTimes = (puzzleType: string) => {

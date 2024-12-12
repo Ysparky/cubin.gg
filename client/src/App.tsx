@@ -60,6 +60,7 @@ const App: React.FC = () => {
     stopTimer,
     setIsSpacePressed,
     readyToStart,
+    deleteLastTime: removeTime,
   });
 
   const handlePuzzleTypeChange = (newType: PuzzleType) => {

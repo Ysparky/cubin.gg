@@ -6,6 +6,7 @@ interface UseKeyboardControlsProps {
   stopTimer: () => void;
   setIsSpacePressed: (pressed: boolean) => void;
   readyToStart: MutableRefObject<boolean>;
+  deleteLastTime: () => void;
 }
 
 export const useKeyboardControls = ({
@@ -14,6 +15,7 @@ export const useKeyboardControls = ({
   stopTimer,
   setIsSpacePressed,
   readyToStart,
+  deleteLastTime
 }: UseKeyboardControlsProps) => {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -25,6 +27,10 @@ export const useKeyboardControls = ({
           setIsSpacePressed(true);
           readyToStart.current = true;
         }
+      }
+      if(event.altKey && event.key === 'z') {
+        event.preventDefault()
+        deleteLastTime()
       }
     };
 
@@ -72,5 +78,5 @@ export const useKeyboardControls = ({
       window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchend", handleTouchEnd);
     };
-  }, [isTimerRunning, startTimer, stopTimer, setIsSpacePressed, readyToStart]);
+  }, [isTimerRunning, startTimer, stopTimer, setIsSpacePressed, readyToStart, deleteLastTime]);
 };
