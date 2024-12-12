@@ -39,4 +39,8 @@ code {
     scrollbar-width: thin;
     scrollbar-color: #cbd5e1 transparent;
   }
+
+  .dark .custom-scrollbar {
+    scrollbar-color: theme('colors.gray.600') transparent;
+  }
 }

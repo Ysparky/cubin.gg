@@ -13,22 +13,17 @@ export const StatCard: React.FC<StatCardProps> = ({
   clickHint,
   compact = false,
 }) => {
-  const handleTouchStart = (event: React.TouchEvent) => {
-    event.stopPropagation();
-  };
-
   return (
     <div
-      className={`bg-white rounded-lg shadow-sm ${
-        onClick ? "cursor-pointer hover:bg-gray-50" : ""
+      className={`bg-white dark:bg-gray-800 rounded-lg shadow-sm ${
+        onClick ? "cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700" : ""
       } ${compact ? "p-2" : "p-4"}`}
       onClick={onClick}
-      onTouchStart={handleTouchStart}
     >
-      <div className="text-xs text-gray-600 mb-0.5">
+      <div className="text-xs text-gray-600 dark:text-gray-400">
         {title} {clickHint && <span className="text-xs">({clickHint})</span>}
       </div>
-      <div className="font-mono text-sm">{value}</div>
+      <div className="font-mono text-sm dark:text-white">{value}</div>
     </div>
   );
 };

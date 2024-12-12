@@ -14,7 +14,7 @@ export const Timer: React.FC<TimerProps> = ({
 }) => (
   <div className="mb-6 text-center">
     <div className="text-6xl font-mono mb-4">{formatTime(currentTime)}s</div>
-    <div className="text-sm text-gray-600">
+    <div className="text-sm text-gray-600 dark:text-gray-300">
       {isTimerRunning
         ? "Timer Running - Press Space to Stop"
         : isSpacePressed

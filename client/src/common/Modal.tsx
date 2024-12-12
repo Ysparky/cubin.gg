@@ -38,14 +38,14 @@ export const Modal: React.FC<ModalProps> = ({
       onClick={handleOutsideClick}
     >
       <div
-        className={`bg-white rounded-lg w-full ${maxWidthClasses[maxWidth]} shadow-lg`}
+        className={`bg-white dark:bg-gray-800 rounded-lg w-full ${maxWidthClasses[maxWidth]} shadow-lg`}
       >
         {/* Header */}
-        <div className="p-4 flex justify-between items-center border-b">
-          <h3 className="text-lg font-bold text-gray-800">{title}</h3>
+        <div className="p-4 flex justify-between items-center border-b dark:border-gray-700">
+          <h3 className="text-lg font-bold text-gray-800 dark:text-white">{title}</h3>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-600 transition-colors"
+            className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
           >
             <X size={20} />
           </button>

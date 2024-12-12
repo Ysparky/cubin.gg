@@ -19,15 +19,15 @@ export const TimerSection: React.FC<TimerSectionProps> = ({
   <div className="flex-none px-4 py-2 md:py-6">
     {/* Scramble */}
     <div className="text-center mb-6">
-      <p className="text-base md:text-xl font-mono">{scramble || 'Loading scramble...'}</p>
+      <p className="text-base md:text-xl font-mono dark:text-gray-200">{scramble || 'Loading scramble...'}</p>
     </div>
     
     {/* Timer */}
     <div className="text-center">
-      <div className="text-7xl md:text-8xl font-mono mb-2 tabular-nums">
+      <div className="text-7xl md:text-8xl font-mono mb-2 tabular-nums dark:text-white">
         {formatTime(currentTime)}
       </div>
-      <div className="text-sm md:text-base text-gray-600 mb-4">
+      <div className="text-sm md:text-base text-gray-600 dark:text-gray-400 mb-4">
         {isTimerRunning 
           ? "Timer Running - Press Space to Stop" 
           : isSpacePressed

@@ -30,22 +30,23 @@ export const TimeEntryList: React.FC<TimeEntryListProps> = ({
           {timeEntries.map((entry) => (
             <div
               key={entry.id}
-              onClick={() => handleCardClick(entry)}
-              onTouchStart={handleTouchStart}
-              className={`relative rounded-lg p-3 transition-all cursor-pointer hover:bg-gray-200 ${
-                entry.time === bestTime
-                  ? "bg-green-50 border-green-200"
-                  : "bg-white border-gray-100"
-              }`}
+              onClick={() => setSelectedEntry(entry)}
+              className={`relative rounded-lg p-3 transition-all cursor-pointer 
+                ${
+                  entry.time === bestTime
+                    ? "bg-green-50 dark:bg-green-900/50 border-green-200 dark:border-green-800"
+                    : "bg-white dark:bg-gray-800 border-gray-100 dark:border-gray-700"
+                }
+                hover:bg-gray-50 dark:hover:bg-gray-700`}
             >
-              <div className="text-lg md:text-xl font-mono font-bold text-center">
+              <div className="text-lg md:text-xl font-mono font-bold text-center dark:text-white">
                 {formatTime(entry.time)}s
               </div>
             </div>
           ))}
         </div>
       ) : (
-        <div className="p-3 text-center text-sm text-gray-500">
+        <div className="p-3 text-center text-sm text-gray-500 dark:text-gray-400">
           No times recorded
         </div>
       )}

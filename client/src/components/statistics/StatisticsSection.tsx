@@ -20,13 +20,15 @@ export const StatisticsSection: React.FC<StatisticsSectionProps> = ({
   <div className="flex-1 min-h-0 px-4">
     <div className="max-w-3xl mx-auto h-full flex flex-col">
       {/* Fixed header section */}
-      <div className="bg-gray-100 pt-3 pb-2">
+      <div className="bg-gray-100 dark:bg-gray-900 pt-3 pb-2 transition-colors">
         <StatisticsDisplay stats={stats} timeEntries={timeEntries} />
         {/* Times header with total solves and clear button */}
-        <div className="flex justify-between items-center mt-4 mb-2">
-          <div className="flex items-center gap-2">
+        <div className="flex items-center justify-between mt-4 mb-2">
+          <div className="flex items-center gap-1">
             <h3 className="text-sm font-medium text-gray-600">Times</h3>
-            <span className="text-xs text-gray-500">({stats.count})</span>
+            <span className="text-sm text-gray-500 dark:text-gray-400">
+              ({stats.count})
+            </span>
           </div>
           {timeEntries.length > 0 && (
             <button
