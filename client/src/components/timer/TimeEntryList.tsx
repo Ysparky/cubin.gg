@@ -27,7 +27,7 @@ export const TimeEntryList: React.FC<TimeEntryListProps> = ({
     <div className="h-full overflow-y-auto px-1 pb-6 custom-scrollbar">
       {timeEntries.length > 0 ? (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 pb-2">
-          {timeEntries.map((entry) => (
+          {timeEntries.map((entry, index) => (
             <div
               key={entry.id}
               onClick={() => setSelectedEntry(entry)}
@@ -39,6 +39,9 @@ export const TimeEntryList: React.FC<TimeEntryListProps> = ({
                 }
                 hover:bg-gray-50 dark:hover:bg-gray-700`}
             >
+               <div className="absolute top-1 left-1 text-xs text-gray-500 dark:text-gray-400">
+                #{timeEntries.length - index}
+              </div>
               <div className="text-lg md:text-xl font-mono font-bold text-center dark:text-white">
                 {formatTime(entry.time)}s
               </div>
